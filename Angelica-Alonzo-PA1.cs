@@ -33,7 +33,7 @@ namespace Angelica_Alonzo_PA1
                     break; 
 
                 case 2: 
-                  score = CheckAnswer(NumOne, NumTwo, Answer, probCount); 
+                  CheckAnswer(NumOne, NumTwo, Answer, probCount, ref score); 
                     break;
 
                 case 3:
@@ -77,11 +77,11 @@ namespace Angelica_Alonzo_PA1
         
 
 
-        public static int CheckAnswer(int NumOne, int NumTwo, int Answer, int probCount)
+        public static int CheckAnswer(int NumOne, int NumTwo, int Answer, int probCount, ref int score)
         {
            
             int result= NumOne * NumTwo; 
-            int score = 0;
+            
             if( probCount == 0 ){
 
                 Console.WriteLine("You must enter an expression first");
