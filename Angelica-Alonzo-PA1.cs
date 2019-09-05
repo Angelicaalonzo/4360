@@ -6,7 +6,7 @@ namespace Angelica_Alonzo_PA1
 {
     class Program
     {
-         static int probCount = 0;
+         
 
         static void Main(string[] args)
         {
@@ -18,6 +18,7 @@ namespace Angelica_Alonzo_PA1
 
            
             int score=0; 
+            int probCount = 0;
            
            
             do
@@ -28,15 +29,15 @@ namespace Angelica_Alonzo_PA1
             switch(ch)
             {
                 case 1:
-                    Answer = ReadExpression(out NumOne, out NumTwo);
+                    Answer = ReadExpression(out NumOne, out NumTwo, ref probCount );
                     break; 
 
                 case 2: 
-                  score = CheckAnswer(NumOne, NumTwo, Answer); 
+                  score = CheckAnswer(NumOne, NumTwo, Answer, probCount); 
                     break;
 
                 case 3:
-                    DisplayScore(score);
+                    DisplayScore(score, probCount);
                     break;
 
             }
@@ -55,7 +56,7 @@ namespace Angelica_Alonzo_PA1
 
     }
 
-       public static int ReadExpression(out int NumOne, out int NumTwo)
+       public static int ReadExpression(out int NumOne, out int NumTwo, ref int probCount)
         {
 
             
@@ -76,7 +77,7 @@ namespace Angelica_Alonzo_PA1
         
 
 
-        public static int CheckAnswer(int NumOne, int NumTwo, int Answer)
+        public static int CheckAnswer(int NumOne, int NumTwo, int Answer, int probCount)
         {
            
             int result= NumOne * NumTwo; 
@@ -107,7 +108,7 @@ namespace Angelica_Alonzo_PA1
            
         }
 
-        public static void DisplayScore(int score)
+        public static void DisplayScore(int score, int probCount)
         {
             Console.WriteLine("You got {0} answers correct out of {1} ", score, probCount);
             
